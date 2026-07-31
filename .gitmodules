@@ -1,0 +1,3 @@
+[submodule "PhIP_Seq_Data_Analysis"]
+	path = PhIP_Seq_Data_Analysis
+	url = https://github.com/Vogl-Lab-Research/PhIP_Seq_Data_Analysis
