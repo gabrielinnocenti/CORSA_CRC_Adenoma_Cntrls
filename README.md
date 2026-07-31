@@ -1,4 +1,4 @@
-# CRC PhIP-Seq analysis
+# Colorectal Cancer Study of Austria - PhIP-Seq analysis
 
 This repository contains the analysis code used to process and visualize PhIP-Seq data for the colorectal cancer project.
 
