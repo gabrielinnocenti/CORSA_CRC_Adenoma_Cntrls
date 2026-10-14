@@ -13,6 +13,14 @@ Paper figures and exploratory analyses are produced in the accompanying Jupyter 
 3. Run downstream analyses in the Jupyter notebook.
 4. Export plots and tables used in the manuscript.
 
+## How to reproduce this work
+Main data analysis were made through the Jupyter Notebook "Analysis_CORSA_Figures_and_tables.ipynb". This loads all the relevant tables, and has all the functions generating the outputs.
+Since we stored the data in a centralized database with all the generated data from our lab, we cannot provide access to the full DB. We offer then the presence/absence and foldchange files which show for all the patients if a given oligopeptide was enriched in `data` folder and the metadata can be loaded in `metadata` folder.
+
+In depth analysis were performed with 2 additional packages:
+1. phiper v 0.4.1 (https://github.com/Polymerase3/phiper) - all relevant scripts for the data produced are in `phiper_analysis`
+2. phipml (https://github.com/csReynaB/phipml) - all the relevant scripts found in `predictions/` folder (in the notebook the path to the joblib file may need to be adjusted)
+
 ## Notes
 
-Input data are not included in this repository unless explicitly stated. Paths to local data files should be adjusted in the notebook before running the analysis.
+Input raw data are not included in this repository unless explicitly stated. Since the analysis was performed locally, paths to local data files should be adjusted in the notebook before rerunning the analysis.
