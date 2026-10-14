@@ -24,4 +24,4 @@ In depth analysis were performed with 2 additional packages:
 
 ## Notes
 
-Input raw data are not included in this repository unless explicitly stated. Since the analysis was performed locally, paths to local data files should be adjusted in the notebook before rerunning the analysis.
+Input raw data are not included in this repository unless explicitly stated, but they will be uploaded to Dataverse server with access for reviewers. Since the analysis was performed locally, paths to local data files should be adjusted in the notebook before rerunning the analysis.
