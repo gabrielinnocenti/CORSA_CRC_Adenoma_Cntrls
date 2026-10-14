@@ -14,7 +14,7 @@ Paper figures and exploratory analyses are produced in the accompanying Jupyter 
 4. Export plots and tables used in the manuscript.
 
 ## How to reproduce this work
-Main data analysis were made through the Jupyter Notebook "Analysis_CORSA_Figures_and_tables.ipynb". This loads all the relevant tables, and has all the functions generating the outputs.
+Main data analysis were made through the Jupyter Notebook `Analysis_CORSA_Figures_and_tables.ipynb`. This loads all the relevant tables, and has all the functions generating the outputs.
 Since we stored the data in a centralized database with all the generated data from our lab, we cannot provide access to the full DB. We offer then the presence/absence and foldchange files which show for all the patients if a given oligopeptide was enriched in `data` folder and the metadata can be loaded in `metadata` folder.
 
 In depth analysis were performed with 2 additional packages:
