@@ -1,0 +1,134 @@
+# mandatory parameters
+metadata_dir: /lisc/data/scratch/ccr/CR_projects/CRC/Metadata
+data_dir: /lisc/data/scratch/ccr/CR_projects/CRC/species
+lib_meta_data: combined_libraries_with_lineages_important_info_nonAAseq.pkl
+project: CORSA
+group_tests:
+  - Controls-Adenoma
+  - CRC
+
+###
+# filter metadata (optional if not all samples are needed)
+#filters_metadata:
+#  cases_cat:     
+#    - cases
+#    - controls
+# Optional parameters with defaults
+meta_typefile: excel
+col_sample_name: SampleName
+col_target: combined
+col_predict: class1_proba
+random_state: 420
+
+# Features and thresholds
+extra_features_to_include:
+  - Sex
+  - Age
+
+data_types:
+  - exist
+
+# Parameter grid for hyperparameter tuning
+param_grid:
+  xgboost:
+    preprocessor__peptides__feature_selection__estimator__l1_ratio:
+      type: real
+      low: 0.55
+      high: 0.9
+      prior: uniform
+
+    preprocessor__peptides__feature_selection__estimator__alpha_min_ratio:
+      type: real
+      low: 0.001
+      high: 0.1
+      prior: log-uniform
+
+    preprocessor__peptides__feature_selection__estimator__n_alphas:
+      type: integer
+      low: 50
+      high: 200
+
+    estimator__learning_rate:
+      type: real
+      low: 0.01
+      high: 0.2
+      prior: log-uniform
+
+    estimator__max_depth:
+      type: integer
+      low: 3
+      high: 8
+
+    estimator__subsample:
+      type: real
+      low: 0.6
+      high: 1.0
+      prior: uniform
+
+    estimator__colsample_bytree:
+      type: real
+      low: 0.6
+      high: 1.0
+      prior: uniform
+
+    estimator__reg_lambda:
+      type: real
+      low: 0.01
+      high: 10.0
+      prior: log-uniform
+
+    estimator__n_estimators:
+      type: integer
+      low: 50
+      high: 500
+
+
+  random-forest:
+    preprocessor__peptides__feature_selection__estimator__l1_ratio:
+      type: real
+      low: 0.4
+      high: 0.95
+      prior: uniform
+
+    preprocessor__peptides__feature_selection__estimator__alpha_min_ratio:
+      type: real
+      low: 0.0001
+      high: 0.05
+      prior: log-uniform
+
+    preprocessor__peptides__feature_selection__estimator__n_alphas:
+      type: integer
+      low: 75
+      high: 200
+
+    estimator__n_estimators:
+      type: integer
+      low: 100
+      high: 500
+
+    estimator__max_depth:
+      type: integer
+      low: 2
+      high: 20
+
+    estimator__min_samples_split:
+      type: integer
+      low: 4
+      high: 30
+
+    estimator__min_samples_leaf:
+      type: integer
+      low: 2
+      high: 20
+
+    estimator__max_features:
+      type: categorical
+      categories: ['sqrt', 'log2', 0.1, 0.3, 0.5, 0.7]
+
+    estimator__class_weight:
+      type: categorical
+      categories: ['balanced', 'balanced_subsample']
+
+
+# parameters for internal classes
+transposed: true
